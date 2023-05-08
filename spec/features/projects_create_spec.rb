@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.feature "User creates a project" do
   scenario "they see the page for the created project" do

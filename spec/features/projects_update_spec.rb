@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.feature "User updates a project" do
   scenario "they see the page for the updated project" do
