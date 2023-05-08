@@ -9,6 +9,7 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   def show
     @comment = @project.comments.new
+    @activities = @project.activities
   end
 
   # GET /projects/new

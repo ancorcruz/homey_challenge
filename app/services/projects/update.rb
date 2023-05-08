@@ -17,6 +17,7 @@ module Projects
               previous_status: project.status_previously_was,
               new_status: project.status
             )
+            project.activities.create! trackable: status_change
           end
         end
       end

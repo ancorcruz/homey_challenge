@@ -20,6 +20,10 @@ RSpec.describe Projects::Update, type: :service do
       expect { result }.not_to change { project.status_changes.size }
     end
 
+    it "does not create an activity record" do
+      expect { result }.not_to change { project.activities.size }
+    end
+
     context "when project is not updated" do
       let(:project_name) { nil }
 
@@ -45,6 +49,11 @@ RSpec.describe Projects::Update, type: :service do
           )
         end
       end
+
+      it "creates an activity record" do
+        expect { result }.to change { project.activities.size }.by(1)
+        expect(project.activities.first.trackable).to eq(project.status_changes.first)
+      end
     end
 
     context "when status_changes creation fails" do
@@ -60,6 +69,10 @@ RSpec.describe Projects::Update, type: :service do
 
       it "does not update project attributes" do
         expect { result }.not_to change { project.reload.name }
+      end
+
+      it "does not create an activity record" do
+        expect { result }.not_to change { project.activities.size }
       end
     end
   end

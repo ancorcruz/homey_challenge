@@ -12,6 +12,5 @@ div
 
 == render "comments/form", comment: @comment
 
-== render @project.status_changes
-
-== render @project.comments
+div#activity_feed
+  == render @activities

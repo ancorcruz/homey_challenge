@@ -3,9 +3,7 @@ class CommentsController < ApplicationController
 
   # POST /comments
   def create
-    @comment = @project.comments.new(comment_params)
-
-    if @comment.save
+    if Comments::Create.call(project: @project, comment_params: comment_params)
       redirect_to @project, notice: "Comment was successfully created."
     else
       render @project, status: :unprocessable_entity

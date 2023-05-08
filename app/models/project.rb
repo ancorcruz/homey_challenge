@@ -7,6 +7,7 @@ class Project < ApplicationRecord
 
   enum status: STATUSES.map { |e| [e, e.to_s] }.to_h.freeze
 
+  has_many :activities, -> { order(created_at: :desc) }
   has_many :comments
   has_many :status_changes
 
