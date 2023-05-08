@@ -8,3 +8,5 @@ div
   =< link_to "Back to projects", projects_path
 
   = button_to "Destroy this project", @project, method: :delete
+
+== render @project.status_changes

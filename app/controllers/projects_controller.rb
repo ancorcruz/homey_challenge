@@ -32,7 +32,7 @@ class ProjectsController < ApplicationController
 
   # PATCH/PUT /projects/1
   def update
-    if @project.update(project_params)
+    if Projects::Update.call(project: @project, project_params: project_params)
       redirect_to @project, notice: "Project was successfully updated."
     else
       render :edit, status: :unprocessable_entity

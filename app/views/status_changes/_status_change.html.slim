@@ -1,0 +1,3 @@
+div id="#{dom_id status_change}"
+  p
+    | Status changed from #{status_change.previous_status} to #{status_change.new_status} at #{l status_change.created_at, format: :short}
