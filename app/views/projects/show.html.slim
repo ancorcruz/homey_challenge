@@ -9,4 +9,9 @@ div
 
   = button_to "Destroy this project", @project, method: :delete
 
+
+== render "comments/form", comment: @comment
+
 == render @project.status_changes
+
+== render @project.comments
