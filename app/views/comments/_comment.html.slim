@@ -1,4 +1,4 @@
 div id="#{dom_id comment}"
+  p =< comment.body
   p
-    strong Body:
-    =< comment.body
+    em Comment added: #{l comment.created_at, format: :short}

@@ -1,16 +1,24 @@
 p style="color: green" = notice
 
-== render @project
+header
+  .mx-auto.max-w-7xl.px-4.py-6.sm:px-6.lg:px-8
+    h1.text-3xl.font-bold.tracking-tight.text-gray-900 = @project.name
+    h2.text-pink-900.font-bold = @project.status.humanize
 
-div
-  => link_to "Edit this project", edit_project_path(@project)
-  '|
-  =< link_to "Back to projects", projects_path
+main.mx-auto.max-w-7xl.px-4.py-6.sm:px-6.lg:px-8
+  == render "comments/form", comment: @comment
 
-  = button_to "Destroy this project", @project, method: :delete
+  div.my-6
+    p =< link_to "Edit this project", edit_project_path(@project), class: "text-blue-500 hover:text-blue-800"
+
+    p =< link_to "Back to projects", projects_path, class: "text-blue-500 hover:text-blue-800"
+
+    = button_to "Destroy this project", @project, method: :delete, class: "bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded my-2"
 
 
-== render "comments/form", comment: @comment
+  div#activity_feed.mx-auto.px-auto.py-6
+    h2.font-bold.text-xl.mx-auto Conversation history
 
-div#activity_feed
-  == render @activities
+    == render @activities
+
+
