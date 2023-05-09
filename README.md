@@ -74,52 +74,27 @@ Please don’t spend any more than 3 hours on this task.
 
 ## Models
 
-Project
+* Activity
+* Comment
+* Project
+* StatusChange
 
-Comments
+## Configuration
 
-ProjectStatusChanges
+Install dependencies with `bundle install`
 
-Activities
+Setup database `rails db:setup`
 
+## Test
 
+Run test suite
 
+```
+  rspec
+```
 
+## Start application (development server)
 
-
-no mailer
-
-no action cable
-
-no json api
-
-only acceptance tests
-
-
-
-
-
-
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+  bin/dev
+```
